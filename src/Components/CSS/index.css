@@ -1,0 +1,7 @@
+.your-class {
+  width: 100%;
+  height: 100px; /* Đảm bảo có chiều cao để bạn thấy border */
+  border-top: 4px solid transparent; /* Giữ border trong suốt */
+  background-image: linear-gradient(to right, #FFA500, #FF1493); /* Gradient từ màu cam đến hồng */
+  background-clip: border-box; /* Áp dụng gradient cho border */
+}

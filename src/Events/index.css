@@ -1,0 +1,30 @@
+
+    /* Tùy chỉnh toàn bộ thanh cuộn */
+::-webkit-scrollbar {
+  width: 12px; /* Chiều rộng của thanh cuộn dọc */
+  height: 10px; /* Chiều cao của thanh cuộn ngang */
+}
+
+/* Tùy chỉnh phần nút kéo (handle) */
+::-webkit-scrollbar-thumb {
+  background-color: #333333; /* Màu nền của nút kéo */
+  border-radius: 10px; /* Bo tròn các góc của nút kéo */
+  /* border: 2px solid #fff; Đặt viền cho nút kéo */
+}
+
+/* Tùy chỉnh phần đường ray (track) của thanh cuộn */
+::-webkit-scrollbar-track {
+  background: #444444; /* Màu nền của đường ray */
+  border-radius: 10px; /* Bo tròn các góc của đường ray */
+}
+
+/* Tùy chỉnh các nút cuộn (dùng cho thanh cuộn kiểu cũ) */
+::-webkit-scrollbar-button {
+  display: none; /* Ẩn các nút cuộn nếu không cần */
+}
+
+/* Tùy chỉnh góc của thanh cuộn (góc giữa thanh cuộn dọc và ngang) */
+::-webkit-scrollbar-corner {
+  background-color: #f1f1f1;
+}
+
