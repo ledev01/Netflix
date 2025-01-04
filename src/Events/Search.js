@@ -317,14 +317,14 @@ function Search({ searchQuery }) {
           value={keyword}
           onChange={handleSearchChange}
           className={`absolute font-normal right-5 h-10 sm:w-96 w-48 sm:mr-0 bg-gray-800 outline-none rounded-lg pl-2 border border-gray-700 bg-blackoil/70 p-2 px-10 text-slate-200 placeholder-gray-400 transition-all duration-300 opacity-80 ${search ? '' : 'hidden'}`}
-          placeholder="Tìm kiếm tên phim .."
+          placeholder="Tìm kiếm tên phim "
         />
       </div>
 
       {/* Dropdown kết quả tìm kiếm */}
       <div
         ref={dropdownRef} 
-        className={`sm:w-96 sm:max-h-[516px] max-h-[316px] w-48 rounded-md bg-black right-5 top-8 absolute shadow-2xl overflow-y-auto ${search ? '' : 'hidden'}`}
+        className={`sm:w-96 sm:max-h-[516px] max-h-[220px] w-48 rounded-md bg-black right-5 top-8 absolute shadow-2xl overflow-y-auto ${search ? '' : 'hidden'}`}
       >
         <div className="flex flex-col">
           {filmsTv.length > 0 && (

@@ -13,7 +13,7 @@ function Phimsapra() {
     return ( <div>
         <Body>
                 {/* <Option /> */}
-                <div className="flex justify-between gap-x-4">
+                <div className="flex sm:justify-between sm:flex-row flex-col  gap-x-4 sm:mb-0 mb-8">
                     <Extraphimsap />
                     <Sidebar />
                 </div>
