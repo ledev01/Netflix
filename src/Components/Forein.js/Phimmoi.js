@@ -82,7 +82,7 @@ function Phimmoi() {
               </Link>
             ))
           ) : (
-            <div className="text-center text-white">Loading Films</div>
+            <img className="w-4 h-4" src="https://cdn-icons-png.flaticon.com/128/15640/15640107.png"/>
           )}
 
         </div>

@@ -72,26 +72,28 @@ function Chitietphim({playFilm, setPlayFilm}) {
 
             {chiTietPhim.movie && (
 
-            <div className="flex flex-row sm:gap-x-4 gap-x-2 sm:justify-start justify-center ">
-                {/* Breadcrumb */}
-                <a href="/" className="flex flex-row gap-x-1 items-center">
-                    <img className=" h-3 w-3" src="https://cdn-icons-png.flaticon.com/128/5974/5974636.png" />
-                    <div className="text-gray-300">Trang chủ</div>
-                </a>
-                <div className="flex flex-row gap-x-1 items-center">
-                    <img className=" h-3 w-3" src="https://cdn-icons-png.flaticon.com/128/15943/15943346.png" />
-                    <p className="text-gray-300">{chiTietPhim.movie.type}</p>
-                   
-                </div>
-                <div className="flex flex-row gap-x-1 items-center">
-                    <img className=" h-3 w-3" src="https://cdn-icons-png.flaticon.com/128/15943/15943346.png" />
-                    <p className="text-gray-300">{chiTietPhim.movie.country[0]?.name}</p>
-                </div>
-                <div className="flex flex-row gap-x-1 items-center">
-                    <img className=" h-3 w-3" src="https://cdn-icons-png.flaticon.com/128/15943/15943346.png" />
-                    
-                    <p className="text-yellow-400">{chiTietPhim.movie.category[0]?.name}</p>
-                    {/* {`${chiTietPhim.movie.category[1]?.name ? ',' + chiTietPhim.movie.category[1]?.name : ''}`} {`${chiTietPhim.movie.category[2]?.name ? ',' + chiTietPhim.movie.category[2]?.name : ''}`} */}
+            <div className="sm:w-full w-[350px] truncate">
+                <div className="flex flex-row sm:gap-x-4 gap-x-2 sm:justify-start justify-center ">
+                    {/* Breadcrumb */}
+                    <a href="/" className="flex flex-row gap-x-1 items-center">
+                        <img className=" h-3 w-3" src="https://cdn-icons-png.flaticon.com/128/5974/5974636.png" />
+                        <div className="text-gray-300">Trang chủ</div>
+                    </a>
+                    <div className="flex flex-row gap-x-1 items-center">
+                        <img className=" h-3 w-3" src="https://cdn-icons-png.flaticon.com/128/15943/15943346.png" />
+                        <p className="text-gray-300">{chiTietPhim.movie.type}</p>
+                       
+                    </div>
+                    <div className="flex flex-row gap-x-1 items-center">
+                        <img className=" h-3 w-3" src="https://cdn-icons-png.flaticon.com/128/15943/15943346.png" />
+                        <p className="text-gray-300">{chiTietPhim.movie.country[0]?.name}</p>
+                    </div>
+                    <div className="flex flex-row gap-x-1 items-center">
+                        <img className=" h-3 w-3" src="https://cdn-icons-png.flaticon.com/128/15943/15943346.png" />
+                        
+                        <p className="text-yellow-400">{chiTietPhim.movie.category[0]?.name}</p>
+                        {/* {`${chiTietPhim.movie.category[1]?.name ? ',' + chiTietPhim.movie.category[1]?.name : ''}`} {`${chiTietPhim.movie.category[2]?.name ? ',' + chiTietPhim.movie.category[2]?.name : ''}`} */}
+                    </div>
                 </div>
             </div>
 
@@ -123,7 +125,7 @@ function Chitietphim({playFilm, setPlayFilm}) {
                             <div className="flex flex-row gap-x-4 justify-center ">
                         <button onClick={handleClick} className="sm:left-2 top-[360px] sm:mr-0 mr-[390px]  absolute font-semibold text-white flex justify-center items-center w-28 py-2 rounded-xl bg-gradient-to-r from-blue-400 to-blue-700 hover:scale-95">
                             <div className="flex flex-row gap-x-2 items-center">
-                                <img className="w-5 h-5" src="https://cdn-icons-png.flaticon.com/128/15281/15281960.png" />
+                                <img className="w-5 h-5 shadow-2xl" src="https://cdn-icons-png.flaticon.com/128/15281/15281960.png" />
                                 <p className="font-normal">Tập phim</p>
                             </div>
                         </button>
@@ -131,7 +133,7 @@ function Chitietphim({playFilm, setPlayFilm}) {
                             
                             <button onClick={handlePlayFilm} className="sm:left-[156px] sm:mr-0 mr-[138px]  top-[360px] absolute font-semibold text-white flex justify-center items-center w-28 py-2 rounded-xl bg-gradient-to-r from-pink-500 to-orange-400 hover:scale-95">
                                 <div className="flex flex-row gap-x-2 items-center">
-                                    <img className="w-5 h-5" src="https://cdn-icons-png.flaticon.com/128/10257/10257610.png" alt="watch icon" />
+                                    <img className="w-5 h-5 shadow-2xl" src="https://cdn-icons-png.flaticon.com/128/10257/10257610.png" alt="watch icon" />
                                     <p className="font-normal">Xem phim</p>
                                 </div>
                             </button>
@@ -162,7 +164,7 @@ function Chitietphim({playFilm, setPlayFilm}) {
                                     </div>
                                 </div>
         
-                                <div className="flex flex-row sm:gap-x-24 gap-x-2 justify-start">
+                                <div className="flex flex-row sm:gap-x-24 gap-x-2 justify-start sm:w-full w-334 truncate">
                                     <div className="flex flex-row gap-x-1">
                                         <p className="font-semibold text-gray-400 text-sm">Trạng thái:</p>
                                         <p className="font-semibold text-gray-200 text-sm">{chiTietPhim.movie?.episode_current}</p>
@@ -173,7 +175,7 @@ function Chitietphim({playFilm, setPlayFilm}) {
                                     </div>
                                 </div>
         
-                                <div className="flex flex-row sm:gap-x-24 gap-x-2 justify-start">
+                                <div className="flex flex-row sm:gap-x-24 gap-x-2 justify-start sm:w-full w-334 truncate">
                                     <div className="flex flex-row gap-x-1">
                                         <p className="font-semibold text-gray-400 text-sm">Quốc gia:</p>
                                         <p className="font-semibold text-gray-200 text-sm">
@@ -212,7 +214,7 @@ function Chitietphim({playFilm, setPlayFilm}) {
                                 {chiTietPhim.movie?.trailer_url && chiTietPhim.movie.trailer_url.trim() !== "" && (
                                     <div className="">
                                         <button onClick={handleTrailerClick} className="font-semibold text-white flex justify-center items-center w-24 py-2 rounded-2xl bg-gradient-to-r from-green-500 to-green-700 mt-1 hover:scale-95 ">
-                                            <div className="flex flex-row gap-x-2 items-center justify-start">
+                                            <div className="flex flex-row gap-x-2 items-center justify-start px-2 shadow-2xl">
                                                 <img className="w-5 h-5" src="https://cdn-icons-png.flaticon.com/128/1709/1709973.png" />
                                                 <p className="font-normal">Trailer</p>
                                             </div>

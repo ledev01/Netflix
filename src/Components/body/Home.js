@@ -17,7 +17,7 @@ function Home() {
                     <div className="flex flex-col justify-center mt-8">
                         <div className="flex justify-center"><Banner /></div>
                         <div className="flex justify-center"><Phimmoi/></div>
-                        <div className="flex justify-between mb-8">
+                        <div className="flex sm:justify-between mb-8 sm:flex-row flex-col">
                             <div className="flex flex-col ">
                                 <Extraphimle showPagination={false}/>
                                 <Extraphimbo showPagination={false}/>
@@ -26,6 +26,7 @@ function Home() {
                             </div>
                             <Sidebar/>
                         </div>
+
                     </div>
                 </Body>
             <Footer />

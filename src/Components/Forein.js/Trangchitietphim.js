@@ -156,7 +156,7 @@ function Trangchitietphim() {
     return (
         <div>
             <Body>
-                <div className="flex justify-between gap-x-4 mb-8">
+                <div className="flex sm:justify-between gap-x-4 mb-8 sm:flex-row flex-col">
                     <div className="flex flex-col">
                         <Chitietphim 
                             setPlayFilm={setPlayFilm} 

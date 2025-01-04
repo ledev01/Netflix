@@ -85,7 +85,7 @@ function Banner() {
 
           {/* Text overlay (optional information about the banner) */}
           <div className="flex flex-col gap-y-3 absolute justify-center sm:left-28 left-14 top-1/3">
-            <p className="sm:text-6xl text-sm font-bold text-lime-400">{banner[index].origin_name}</p>
+            <p className="sm:text-6xl text-md font-bold text-lime-400">{banner[index].origin_name}</p>
             <p className="sm:text-3xl text-xs font-bold text-gray-100">{banner[index].name}</p>
             <div className="sm:flex flex-row gap-x-4 items-center hidden">
               <div className="rounded-2xl border border-1 py-2 px-3 text-gray-100 font-semibold">T13</div>

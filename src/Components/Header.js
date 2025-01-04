@@ -14,10 +14,12 @@ function Header(props) {
 
     const handleTheLoai = () =>{
         setTheLoai(!theLoai)
+        setQuocGia(false)
     }
 
     const handleQuocGia = () =>{
         setQuocGia(!quocGia)
+        setTheLoai(false)
     }
 
 

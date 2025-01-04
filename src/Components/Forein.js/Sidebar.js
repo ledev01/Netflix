@@ -49,8 +49,8 @@ function Sidebar({ handleCT }) {
    }
 
    return (
-      <div className="md:flex hidden">
-         <div className="ml-auto w-[428.84px] h-full flex flex-col">
+      <div className="">
+         <div className="ml-auto sm:w-[428.84px] w-[350px] h-full flex flex-col">
             <div className="flex flex-row mt-10">
                <div className="flex flex-col gap-y-0.5">
                   <div className="underline font-bold text-xl bg-gradient-to-r from-orange-400 to-pink-600 bg-clip-text text-transparent ">
@@ -89,7 +89,7 @@ function Sidebar({ handleCT }) {
                </div>
             </div>
 
-            <div className="w-full h-full flex flex-col gap-y-0.5 mt-3">
+            <div className="sm:w-full w-[350px] h-full flex flex-col gap-y-0.5 mt-3">
 
                                  {Array.isArray(filmsView) && filmsView.length > 0 ? (
                            filmsView.slice(12,24).map((item) => (
@@ -97,7 +97,7 @@ function Sidebar({ handleCT }) {
                                     <button
                                      onClick={handleCT}
                                     // onClick={()=>handleCT()}
-                                      className="rounded-md w-[428.84px] h-[176px] border border-gray-800 border-solid flex items-center hover:bg-gray-800">
+                                      className="rounded-md sm:w-[428.84px] w-[350px] h-[176px] border border-gray-800 border-solid flex items-center hover:bg-gray-800">
                                     <div className="flex flex-row gap-x-5 ml-4 items-center">
                                         <span >
                                           <LazyLoadImage
@@ -108,7 +108,7 @@ function Sidebar({ handleCT }) {
                                           loading="lazy"
                                           />
                                        </span>
-                                       <div className="flex flex-col gap-y-3 w-72 justify-start ">
+                                       <div className="flex flex-col gap-y-3 sm:w-72 w-52 justify-start ">
                                           <div className='flex justify-start'><a className="text-green-300 font-semibold truncate ">{item.origin_name}</a></div>
                                           <div className='flex justify-start'><a className="text-white truncate ">{item.name}</a></div>
                                           <div className='flex justify-start'><a className="text-gray-300  truncate ">{item.year}</a></div>
@@ -118,7 +118,7 @@ function Sidebar({ handleCT }) {
                                  </Link>
                            ))
                         ) : (
-                           <div className="text-center text-white">No films available</div>
+                           <img className="w-4 h-4" src="https://cdn-icons-png.flaticon.com/128/15640/15640107.png"/>
                         )}
            
             </div>
