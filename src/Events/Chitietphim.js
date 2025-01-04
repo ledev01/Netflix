@@ -13,9 +13,6 @@ function Chitietphim({playFilm, setPlayFilm}) {
     // const [playFilm, setPlayFilm] = useState(false);
 
 
-    
-
-
     // const resRef = useRef(null);
     const filmsRef = useRef(null);
 
@@ -28,7 +25,7 @@ function Chitietphim({playFilm, setPlayFilm}) {
 
     const handlePlayFilm = () =>  {
         setPlayFilm(true)
-       
+        window.scrollTo(0, 0); // Scroll to top of the page
     }
 
 
@@ -108,7 +105,7 @@ function Chitietphim({playFilm, setPlayFilm}) {
                          {/* <iframe className="w-[860px] h-[483.7px] rounded-md" src={chiTietPhim.episodes[0].server_data[0].link_embed} allowFullScreen></iframe> */}
                          {  selectedEpisode.link_embed
                          ?(<iframe className="sm:w-[860px] sm:h-[483.7px] w-[350px] h-[196.6px] rounded-md" src={selectedEpisode.link_embed} allowFullScreen></iframe>)
-                         :(<div className=" p-2 gap-x-2 flex flex-row bg-gray-700 rounded-md sm:w-full w-[300px]">
+                         :(<div className=" p-2 gap-x-2 flex flex-row bg-gray-700 rounded-md sm:w-full w-[300px] sm:mx-8 sm:justify-center">
                             <img className="h-6 w-6" src="https://cdn-icons-png.flaticon.com/128/4539/4539472.png"/>
                             <p className="font-normal text-white">Rất tiếc bộ phim đang chưa hoàn thiện, mình chọn phim khác bạn nhé !</p>
                          </div>)}
@@ -125,11 +122,15 @@ function Chitietphim({playFilm, setPlayFilm}) {
                             <div className="flex flex-row gap-x-4 justify-center ">
                         <button onClick={handleClick} className="sm:left-2 top-[360px] sm:mr-0 mr-[390px]  absolute font-semibold text-white flex justify-center items-center w-28 py-2 rounded-xl bg-gradient-to-r from-blue-400 to-blue-700 hover:scale-95">
                             <div className="flex flex-row gap-x-2 items-center">
-                                <img className="w-5 h-5 shadow-2xl" src="https://cdn-icons-png.flaticon.com/128/15281/15281960.png" />
+
+                                {show ?
+                                (<img className="w-5 h-5 shadow-2xl" src="https://cdn-icons-png.flaticon.com/128/15281/15281960.png" />):
+                                (<img className="w-5 h-5 shadow-2xl" src="https://cdn-icons-png.flaticon.com/128/15281/15281955.png" />)
+                                }
+
                                 <p className="font-normal">Tập phim</p>
                             </div>
                         </button>
-
                             
                             <button onClick={handlePlayFilm} className="sm:left-[156px] sm:mr-0 mr-[138px]  top-[360px] absolute font-semibold text-white flex justify-center items-center w-28 py-2 rounded-xl bg-gradient-to-r from-pink-500 to-orange-400 hover:scale-95">
                                 <div className="flex flex-row gap-x-2 items-center">
@@ -153,7 +154,7 @@ function Chitietphim({playFilm, setPlayFilm}) {
                             <div className="flex flex-col gap-y-2  sm:items-start sm:pt-0 pt-6 sm:w-[523.45px] w-[350px] sm:px-0 px-2">
                                 <p className="font-bold text-2xl text-gray-200 ">{chiTietPhim.movie.name}</p>
                                 <p className="font-semibold text-gray-400 ">{chiTietPhim.movie.origin_name}</p>
-                                <div className="flex flex-row sm:gap-x-24 gap-x-2  justify-start">
+                                <div className="flex flex-row sm:gap-x-24 gap-x-2  justify-start sm:w-full w-334 truncate">
                                     <div className="flex flex-row gap-x-1">
                                         <p className="font-semibold text-gray-400 text-sm">Năm:</p>
                                         <p className="font-semibold text-gray-200 text-sm">{chiTietPhim.movie.year}</p>
@@ -190,7 +191,7 @@ function Chitietphim({playFilm, setPlayFilm}) {
                                     </div>
                                 </div>
         
-                                <div className="flex flex-row gap-x-1 justify-start">
+                                <div className="flex flex-row gap-x-1 justify-start sm:w-full w-334 truncate">
                                     <p className="font-semibold text-gray-400 text-sm">Thể loại:</p>
                                     <p className="font-semibold text-gray-200 text-sm">
                                         {chiTietPhim.movie?.category && chiTietPhim.movie.category.length > 0
