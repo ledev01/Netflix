@@ -445,7 +445,7 @@ function Search({ searchQuery }) {
         setNoFilmsFound(true);
       }
     } catch (error) {
-      console.error('Lỗi khi tải phim:', error);
+      // console.error('Lỗi khi tải phim:', error);
       setNoFilmsFound(true);
     }
   };
@@ -488,6 +488,18 @@ function Search({ searchQuery }) {
     };
   }, []);
 
+
+  const handleClickFilm = (e, slug) => {
+    e.preventDefault(); // Ngăn không cho bàn phím ẩn ngay lập tức
+    setSearch(false);  // Ẩn input tìm kiếm
+    setLogo(true);  // Hiện logo tìm kiếm lại
+    setKeyword('');  // Xóa từ khóa tìm kiếm
+    
+    // Sau đó, thực hiện điều hướng
+    navigate(`/trangchitietphim/${slug}`);
+  };
+  
+
   return (
     <div className="flex flex-col relative">
       {/* Search Icon and Input */}
@@ -519,7 +531,7 @@ function Search({ searchQuery }) {
         }}
       >
         <div className="flex flex-col">
-          {filmsTv.length > 0 ? (
+          {/* {filmsTv.length > 0 ? (
             filmsTv.map((item) => (
               <Link 
                 key={item._id} 
@@ -551,7 +563,43 @@ function Search({ searchQuery }) {
             ))
           ) : (
             <div className="text-center text-gray-400 p-2">Không có kết quả tìm kiếm.</div>
-          )}
+          )} */}
+
+{filmsTv.length > 0 ? (
+  filmsTv.map((item) => (
+    <Link 
+      key={item._id} 
+      to="#" // Sử dụng '#' thay vì trực tiếp vào link vì chúng ta sẽ xử lý việc điều hướng thủ công
+      onClick={(e) => handleClickFilm(e, item.slug)} // Gọi hàm handleClickFilm khi nhấn vào
+    >
+      <div className="pl-2 sm:h-[120px] h-[100px] w-full hover:bg-gray-400 flex flex-row gap-x-2 rounded-md relative items-center search-result">
+        <span>
+          <LazyLoadImage
+            className="sm:w-[64px] sm:h-[96px] h-[80px] w-[54px] rounded-md object-cover"
+            src={`https://img.ophim.live/uploads/movies/${item.thumb_url}`}
+            effect="blur" 
+            loading="lazy"
+          />
+        </span>
+        <div className="flex flex-col items-center sm:w-[270px] w-[100px] justify-start">
+          <div className="flex justify-start sm:w-[270px] w-[100px]">
+            <div className="text-yellow-300 font-semibold truncate">{item.origin_name}</div>
+          </div>
+          <div className="flex justify-start sm:w-[270px] w-[100px]">
+            <a className="text-white truncate">{item.name}</a>
+          </div>
+          <div className="flex justify-start sm:w-[270px] w-[100px]">
+            <a className="text-white truncate">{item.year}</a>
+          </div>
+        </div>
+      </div>
+    </Link>
+  ))
+) : (
+  <div className="text-center text-gray-400 p-2">Không có kết quả tìm kiếm.</div>
+)}
+
+
         </div>
       </div>
     </div>

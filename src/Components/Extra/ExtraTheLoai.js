@@ -108,7 +108,7 @@ function ExtraTheLoai({showPagination =true}) {
           break;
       
         default:
-          console.log("Không có phim nào cho đường dẫn này");
+          // console.log("Không có phim nào cho đường dẫn này");
       }
     };
 
@@ -147,17 +147,17 @@ function ExtraTheLoai({showPagination =true}) {
   const getFilm = async (fetchFunction) => {
     try {
       let response = await fetchFunction(activePage); // Sử dụng hàm fetch tương ứng với activePage
-      console.log("API Response:", response); // Ghi lại phản hồi để gỡ lỗi
+      // console.log("API Response:", response); // Ghi lại phản hồi để gỡ lỗi
 
       if (response && response.data && response.data.data && Array.isArray(response.data.data.items)) {
         setFilmTv(response.data.data.items);
         setTotalPages(response.data.data.totalPages || 1); // Thiết lập tổng số trang từ phản hồi API
         res.current = response; // Lưu giá trị vào ref
       } else {
-        console.error("Cấu trúc phản hồi không mong muốn", response);
+        // console.error("Cấu trúc phản hồi không mong muốn", response);
       }
     } catch (error) {
-      console.error("Lỗi khi tải phim:", error);
+      // console.error("Lỗi khi tải phim:", error);
     }
   };
 

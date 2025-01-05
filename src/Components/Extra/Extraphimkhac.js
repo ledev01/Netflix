@@ -1,98 +1,4 @@
-// import { useState, useEffect } from "react";
-// import { fetchFilmById ,fetchFilmsGoiY} from "../../Services/itemService";
-// import { useParams } from "react-router-dom";
-// import { Link } from "react-router-dom";
 
-// function Extraphimkhac({handleCTFilm}) {
-//     const [filmsSapRa, setFilmsSapRa] = useState([]);
-//     const [playFilm, setPlayFilm] = useState(false);  // State for controlling the film play
-
-
-//        // Fetch films when the page changes
-//   useEffect(() => {
-//     getFilmsSapRa();
-//   }, []); // Trigger when active page changes
-
-
-
-
-//   const getFilmsSapRa = async (page) => {
-//     try {
-//       let res = await fetchFilmsGoiY(page);  
-//       console.log("API Response:", res); // Log the entire response to inspect it
-
-//       if (res && res.data && res.data.data && Array.isArray(res.data.data.items)) {
-//         setFilmsSapRa(res.data.data.items);
-//       } else {
-//         console.error("Unexpected response structure", res);
-//       }
-//     } catch (error) {
-//       console.error("Error fetching films:", error);
-//     }
-//   };
-
-
-//     return (
-//             <div className="w-[860px] h-auto mr-auto mt-10">
-//                 <div className="flex flex-col">
-//                     <div className="flex flex-row">
-//                         <div className="flex flex-col gap-y-0.5">
-//                             <div className="underline font-bold text-xl bg-gradient-to-r from-orange-400 to-pink-600 bg-clip-text text-transparent">Có Thể Bạn Sẽ Thích</div>
-//                             <div className="border-t border-solid w-full border-pink-500"></div>
-//                         </div>
-//                     </div>
-
-//                     <div className="border-t border-solid border-gray-800 mt-1"></div>
-
-//                     <div className="grid grid-cols-4 mx-auto w-[860px] gap-x-4 gap-y-4 mt-3">
-
-
-
-//                 {/* {Array.isArray(filmsSapRa) && filmsSapRa.length > 0 ? (
-//                     filmsSapRa.map((item) => ( */}
-//                     {Array.isArray(filteredFilms) && filteredFilms.length > 0 ? (
-//                         filteredFilms.map((item) => (
-//                     <Link to={`/trangchitietphim/${item.slug}`}>
-                            
-//                     <div 
-//                     onClick={()=>handleCTFilm()}
-//                     key={item._id} className="w-[201.66px] h-[340px] bg-gray-800 flex flex-col rounded-md overflow-hidden relative">
-//                         <p className="absolute z-10 left-2 top-2 rounded-tl-md rounded-br-md rounded-tr bg-gradient-to-r from-pink-500 to-purple-700 w-20 h-6 text-white text-xs font-semibold flex items-center justify-center">HD+Vietsub</p>
-//                         <a className="absolute right-2 top-[252px] w-14 h-6 z-10 rounded-tl-md rounded-br-md rounded-tr bg-gradient-to-r from-red-500 to-yellow-700 text-white text-xs font-semibold flex items-center justify-center">Trailer</a>
-//                         <img className="w-[201.66px] h-[281.5px] rounded-tl-md rounded-tr-md transform transition-transform duration-200 hover:scale-105 object-cover" src={`https://img.ophim.live/uploads/movies/${item.thumb_url}`} />
-//                         <div className="flex flex-col bg-gray-800 justify-center items-center z-10">
-//                         <div className="flex justify-center w-[185.66px]">
-//                             <Link to={`/trangchitietphim/${item.slug}`} className="text-yellow-300 font-semibold truncate ">{item.origin_name}</Link>
-//                         </div>
-//                         <div className="flex justify-center w-[185.66px]">
-//                             <a className="text-white truncate">{item.name}</a>
-//                         </div>
-//                         </div>
-//                     </div>
-
-//                     </Link>
-//                     ))
-//                 ) : (
-//                     <div className="text-center text-white">Loading Films</div>
-//                 )}
-
-
-
-
-
-//                     </div>
-//                 </div>
-//             </div>
-
-    
-// );
-// }
-
-// export default Extraphimkhac;
-
-
-
-// Extraphimkhac.js
 
 import { useState, useEffect } from "react";
 import { fetchFilmsLe } from "../../Services/itemService";
@@ -120,13 +26,13 @@ function Extraphimkhac({ categories, handleCTFilm }) {
   
           // Process each API response
           responses.forEach((res) => {
-              console.log("API Response:", res);
+            //   console.log("API Response:", res);
   
               // Validate and collect films from each page
               if (res && res.data && res.data.data && Array.isArray(res.data.data.items)) {
                   allFilms.push(...res.data.data.items);
               } else {
-                  console.error("Unexpected response structure", res);
+                //   console.error("Unexpected response structure", res);
               }
           });
   
@@ -134,7 +40,7 @@ function Extraphimkhac({ categories, handleCTFilm }) {
           setFilmsSapRa(allFilms);
   
       } catch (error) {
-          console.error("Error fetching films:", error);
+        //   console.error("Error fetching films:", error);
       }
   };
   

@@ -26,15 +26,15 @@ function Sidebar({ handleCT }) {
    const getFilmsBo = async () => {
       try {
         let res = await fetchFilmsViews(active);  
-        console.log("API Response:", res); // Log the entire response to inspect it
+      //   console.log("API Response:", res); // Log the entire response to inspect it
   
         if (res && res.data && res.data.data && Array.isArray(res.data.data.items)) {
          setFilmsView(res.data.data.items);
         } else {
-          console.error("Unexpected response structure", res);
+         //  console.error("Unexpected response structure", res);
         }
       } catch (error) {
-        console.error("Error fetching films:", error);
+      //   console.error("Error fetching films:", error);
       }
     };
 

@@ -24,16 +24,16 @@ function Extraphimle({ showPagination = true }) {
   const getFilm = async (page) => {
     try {
       let res = await fetchFilmsLe(page); // Pass current page to the API
-      console.log("API Response:", res); // Log the entire response to inspect it
+      // console.log("API Response:", res); // Log the entire response to inspect it
 
       if (res && res.data && res.data.data && Array.isArray(res.data.data.items)) {
         setFilmLe(res.data.data.items);
         setTotalPages(res.data.data.totalPages || 1); // Assuming the API provides the total number of pages
       } else {
-        console.error("Unexpected response structure", res);
+        // console.error("Unexpected response structure", res);
       }
     } catch (error) {
-      console.error("Error fetching films:", error);
+      // console.error("Error fetching films:", error);
     }
   };
 

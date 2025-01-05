@@ -53,12 +53,12 @@ function Chitietphim({playFilm, setPlayFilm}) {
     const getChiTiet = async (slug) => {
         try {
             let res = await fetchFilmById(slug);  // Fetch movie details by `slug`
-            console.log("Movie details fetched:", res);  // Log the response
+            // console.log("Movie details fetched:", res);  // Log the response
             if (res && res.data) {
                 setChiTietPhim(res.data);  // Update state with movie details
             }
         } catch (error) {
-            console.error("Error fetching movie details:", error);  // Log error if fetch fails
+            // console.error("Error fetching movie details:", error);  // Log error if fetch fails
         }
     };
 

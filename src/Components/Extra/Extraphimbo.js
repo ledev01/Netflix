@@ -24,16 +24,16 @@ function Extraphimbo({showPagination = true}) {
   const getFilmsBo = async (page) => {
     try {
       let res = await fetchFilmsBo(page); // Pass the current page to the API
-      console.log("API Response:", res); // Log the response for debugging
+      // console.log("API Response:", res); // Log the response for debugging
 
       if (res && res.data && res.data.data && Array.isArray(res.data.data.items)) {
         setFilmsBo(res.data.data.items);
         setTotalPages(res.data.data.totalPages || 1); // Set the total pages from the API response
       } else {
-        console.error("Unexpected response structure", res);
+        // console.error("Unexpected response structure", res);
       }
     } catch (error) {
-      console.error("Error fetching films:", error);
+      // console.error("Error fetching films:", error);
     }
   };
 

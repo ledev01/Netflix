@@ -27,7 +27,7 @@ function Banner() {
       // Slice the first 6 items
       setBanner(res.data.data.items.slice(0,4));
     }
-    console.log("Check res banner>>> :", res);
+    // console.log("Check res banner>>> :", res);
   };
 
   // Update the index for the next image

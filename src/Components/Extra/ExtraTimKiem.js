@@ -23,7 +23,7 @@ function ExtraTimKiem({searchQuery, showPagination = true }) {
 
     try {
       let response = await fetchFilmsTimKiem(keyword);
-      console.log("API Response timkiem:", response);
+      // console.log("API Response timkiem:", response);
 
       if (response && response.data && response.data.data && Array.isArray(response.data.data.items)) {
         const films = response.data.data.items;
@@ -32,11 +32,11 @@ function ExtraTimKiem({searchQuery, showPagination = true }) {
         setNoFilmsFound(films.length === 0); // Cập nhật nếu không có phim
         res.current = response;
       } else {
-        console.error("Cấu trúc phản hồi không mong muốn", response);
+        // console.error("Cấu trúc phản hồi không mong muốn", response);
         setNoFilmsFound(true); // Nếu không có dữ liệu hợp lệ, hiển thị không có phim
       }
     } catch (error) {
-      console.error("Lỗi khi tải phim:", error);
+      // console.error("Lỗi khi tải phim:", error);
       setNoFilmsFound(true); // Nếu có lỗi, hiển thị không có phim
     }
   };
