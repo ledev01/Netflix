@@ -35,7 +35,7 @@ function Phimmoi() {
           <div className="flex flex-row ">
   
                <div className="flex flex-col gap-y-0.5">
-                  <div class="underline font-bold text-xl bg-gradient-to-r from-orange-400 to-pink-600 bg-clip-text text-transparent ">Phim mới</div>
+                  <div className="underline font-bold text-xl bg-gradient-to-r from-orange-400 to-pink-600 bg-clip-text text-transparent ">Phim mới</div>
                   <div className=" border-t border-solid w-full border-pink-500"></div> 
                </div>
   
@@ -50,14 +50,14 @@ function Phimmoi() {
 
 {Array.isArray(filmsSapRa) && filmsSapRa.length > 0 ? (
             filmsSapRa.slice(0,12).map((item) => (
-              <Link to={`/trangchitietphim/${item.slug}`}>
+              <Link to={`/trangchitietphim/${item.slug}`} key={item._id}>
 
-              <div key={item._id} className="sm:w-[201.66px] w-[170px]  sm:h-[340px] bg-gray-800 flex flex-col rounded-md overflow-hidden relative">
+              <div className="sm:w-[201.66px] w-[170px]  sm:h-[340px] bg-gray-800 flex flex-col rounded-md overflow-hidden relative">
                 <p className="absolute z-10 left-2 top-2 rounded-tl-md rounded-br-md rounded-tr bg-gradient-to-r from-pink-500 to-purple-700 w-20 h-6 text-white text-xs font-semibold flex items-center justify-center">HD+Vietsub</p>
                 {/* <a className="absolute right-2 top-[252px] w-14 h-6 z-10 rounded-tl-md rounded-br-md rounded-tr bg-gradient-to-r from-red-500 to-yellow-700 text-white text-xs font-semibold flex items-center justify-center">Trailer</a> */}
-                <a className="absolute right-2 top-[252px] px-3 h-6 z-10 rounded-tl-md rounded-br-md rounded-tr bg-gradient-to-r from-red-500 to-yellow-700 text-white text-xs font-semibold flex items-center justify-center">
+                <div className="absolute right-2 top-[252px] px-3 h-6 z-10 rounded-tl-md rounded-br-md rounded-tr bg-gradient-to-r from-red-500 to-yellow-700 text-white text-xs font-semibold flex items-center justify-center">
                     {item.episode_current}
-                  </a>
+                  </div>
                   {/* 187 */}
                 {/* <img className="w-[201.66px] h-[281.5px] rounded-tl-md rounded-tr-md transform transition-transform duration-200 hover:scale-105 object-cover" src={`https://img.ophim.live/uploads/movies/${item.thumb_url}`} /> */}
                 <span className="relative">

@@ -258,7 +258,7 @@ function Header(props) {
           <div className="text-white" >Thể Loại</div>
           <img className="w-4 h-4" src="https://cdn-icons-png.flaticon.com/128/14025/14025517.png"/>
       </button>
-      <div className={`grid grid-cols-2 gap-y-1 overflow-y-auto w-64 h-32 ${theLoai ?'':'hidden'}`}>
+      <div className={`grid grid-cols-2 gap-y-1 overflow-y-auto w-64 h-36 ${theLoai ?'':'hidden'}`}>
       <a href="/hanhdong" className="w-28 rounded-lg h-10 items-center px-1 justify-center flex text-white bg-slate-400">Hành động</a>
     <a href="/cotrang" className="w-28 rounded-lg h-10 items-center px-1 justify-center flex text-white bg-slate-400 ">Cổ trang</a>
     <a href="/chientranh" className="w-28 rounded-lg h-10 items-center px-1 justify-center flex text-white bg-slate-400 ">Chiến tranh</a>
@@ -290,7 +290,7 @@ function Header(props) {
           <div className="text-white" >Quốc Gia</div>
           <img className="w-4 h-4" src="https://cdn-icons-png.flaticon.com/128/14025/14025517.png"/>
       </button>
-      <div className={`grid grid-cols-2 gap-y-1 overflow-y-auto w-64 h-32 ${quocGia ?'':'hidden'}`}>
+      <div className={`grid grid-cols-2 gap-y-1 overflow-y-auto w-64 h-36 ${quocGia ?'':'hidden'}`}>
       
       <a href="/TrungQuoc" className="w-28 rounded-lg h-10 items-center px-1 justify-center flex text-white bg-slate-400 ">Trung Quốc</a>
     <a href="/ThaiLan" className="w-28 rounded-lg h-10 items-center px-1 justify-center flex text-white bg-slate-400 ">Thái Lan</a>
